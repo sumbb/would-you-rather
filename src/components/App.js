@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared';
-
+import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
 
@@ -11,11 +11,24 @@ class App extends Component {
 
   render() {
     return (
+      <Fragment>
+        <LoadingBar/>
       <div>
-        WOULD YOU RATHER..?
+      {this.props.isLoading === true
+                ? null
+                : <div>
+                   WOULD YOU RATHER...?
+                  </div> }
       </div>
+      </Fragment>
     );
   } 
 }
 
-export default connect()(App)
+function mapStateToProps({ loggedUser }) {
+  return {
+    isLoading : loggedUser === '' ? true : false
+  }
+}
+
+export default connect(mapStateToProps)(App)
