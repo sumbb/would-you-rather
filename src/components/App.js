@@ -18,7 +18,7 @@ class App extends Component {
       {this.props.isLoading === true
                 ? null
                 : <div>
-                   <QuestionList isAnswered={true}/>
+                   <QuestionList isAnswered={false}/>
                   </div> }
       </div>
       </Fragment>
