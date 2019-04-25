@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared';
 import LoadingBar from 'react-redux-loading'
-import Login from './Login'
+import QuestionList from './QuestionList'
 
 class App extends Component {
 
@@ -18,7 +18,7 @@ class App extends Component {
       {this.props.isLoading === true
                 ? null
                 : <div>
-                   <Login/>
+                   <QuestionList isAnswered={true}/>
                   </div> }
       </div>
       </Fragment>
