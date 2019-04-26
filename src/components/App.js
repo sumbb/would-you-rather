@@ -4,6 +4,7 @@ import { handleInitialData } from '../actions/shared';
 import LoadingBar from 'react-redux-loading'
 import QuestionList from './QuestionList'
 import Home from './Home'
+import NewQuestion from './NewQuestion'
 
 class App extends Component {
 
@@ -19,7 +20,7 @@ class App extends Component {
       {this.props.isLoading === true
                 ? null
                 : <div>
-                   <Home/>
+                   <NewQuestion/>
                   </div> }
       </div>
       </Fragment>
