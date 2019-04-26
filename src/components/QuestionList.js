@@ -7,15 +7,12 @@ class QuestionList extends Component {
     render() {
         const { questionIds, isAnswered } = this.props
         return (
-            <div >
-            <div>
                 <ul className='question-list'>
                     {questionIds.map((qid) => (
                         <li key={qid}><Question qid={qid} isAnswered={isAnswered}/></li>
                     ))}
                 </ul>
-            </div>
-            </div>
+            
         )
     }
 }

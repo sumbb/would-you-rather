@@ -27,7 +27,8 @@ code {
 
 .question-list {
   list-style: none;
-
+  width: 90%;
+  padding-left: 30px;
 }
 
 .question-list,
@@ -67,11 +68,12 @@ li {
 .btn {
   text-transform: uppercase;
   padding: 10px;
-  border: 2px solid #adddfc;
+  border: 2px solid #008CBA;
   cursor: pointer;
-  background: white;
-  font-size: 16px;
+  background-color: #008CBA;
+  font-size: 12px;
   width: 250px;
+  height: 30px;
 }
 
 .btn:hover {
@@ -83,4 +85,11 @@ li {
   outline: 0;
   font-weight: 700;
   border-width: 2px;
+}
+
+.home {
+  width: 550px;
+  display: inline-block;
+  border: solid #909090;
+  border-width: 1px 1px;
 }

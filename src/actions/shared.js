@@ -4,7 +4,7 @@ import { receiveQuestions } from './questions';
 import { setLoggedUser } from './loggedUser';
 import { showLoading, hideLoading } from 'react-redux-loading';
 
-const TEMP_LOGGED_USER = 'tylermcginnis'
+const TEMP_LOGGED_USER = 'johndoe'
 
 export function handleInitialData() {
     return (dispatch) => {

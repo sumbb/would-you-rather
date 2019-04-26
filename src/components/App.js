@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared';
 import LoadingBar from 'react-redux-loading'
 import QuestionList from './QuestionList'
+import Home from './Home'
 
 class App extends Component {
 
@@ -18,7 +19,7 @@ class App extends Component {
       {this.props.isLoading === true
                 ? null
                 : <div>
-                   <QuestionList isAnswered={false}/>
+                   <Home/>
                   </div> }
       </div>
       </Fragment>
