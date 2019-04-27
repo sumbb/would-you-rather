@@ -1,5 +1,8 @@
 import { RECEIVE_USERS } from '../actions/users'
-import { ADD_QUESTION } from '../actions/questions'
+import { 
+    ADD_QUESTION,
+    ADD_ANSWER,
+    REMOVE_ANSWER } from '../actions/questions'
 
 export function users(state = {}, action) {
     switch (action.type) {
@@ -7,14 +10,38 @@ export function users(state = {}, action) {
             return action.users
         case ADD_QUESTION: 
             const author = action.question.author
-            const qid = action.question.id
+            const questionId = action.question.id
             return {
                 ...state,
                 [author]: {
                     ...state[author],
-                    questions: state[author].questions.concat([qid])
+                    questions: state[author].questions.concat([questionId])
                   }
-            }    
+            }
+        case ADD_ANSWER: 
+            const { qid, loggedUser, option } = action  
+            return {
+                ...state,
+                [loggedUser]: {
+                  ...state[loggedUser],
+                  answers: {
+                    ...state[loggedUser].answers,
+                    [qid]: option
+                  }
+                }
+              }
+        case REMOVE_ANSWER: 
+              const { qidR, loggedUserR } = action
+              const answers = state[loggedUserR].answers
+              delete answers[qidR]
+              const newAnswers = Object.create(answers)   
+              return {
+                  ...state,
+                  [loggedUserR]: {
+                    ...state[loggedUserR],
+                    answers: newAnswers
+                  }
+                }             
         default: 
             return state    
     }

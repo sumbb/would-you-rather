@@ -62,7 +62,6 @@ li {
 
 .question-redirect {
     width: 420px;
-    border: black;
 }
 
 .btn {
@@ -198,4 +197,44 @@ li {
 .nav-avatar {
   height: 35px;
   border-radius: 50%;
+}
+
+.poll-question {
+  width: 100%;
+  max-width: 520px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 1px solid #909090;
+  border-radius: 3px;
+}
+
+.poll-question-heading {
+  height: 40px;
+  width: 100%;
+  background: #D3D3D3;
+  padding-top: 10px;
+}
+
+.display-inline {
+  display: inline-block;
+}
+
+.poll-question-info {
+  width: 100%;
+  direction: flex;
+  height: 140px;
+  display: flex;
+}
+
+.take-poll-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+.take-poll-form > div {
+  display: flex;
 }
