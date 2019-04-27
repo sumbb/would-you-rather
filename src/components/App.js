@@ -8,6 +8,7 @@ import NewQuestion from './NewQuestion'
 import Navigation from './Navigation'
 import Login from './Login'
 import ViewPoll from './ViewPoll'
+import Leaderboard from './Leaderboard'
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ class App extends Component {
                    <Route path='/home' component={Home}/>
                    <Route path='/add' component={NewQuestion}/>
                    <Route path='/question/:qid' component={ViewPoll}/>
+                   <Route path='/leaderboard' component={Leaderboard}/>
                   </div> }
           </div>
         </Fragment>

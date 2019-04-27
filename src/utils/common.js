@@ -23,3 +23,20 @@ export function calculatePercentage(votes, total) {
     const percentage =  (100*votes)/total
     return Math.round( percentage * 10) / 10
 }
+
+export function sortUsersByScore(users) {
+    const userIds = Object.keys(users)
+    return userIds.sort((a, b) => getScore(users[b]) - getScore(users[a]))
+}
+
+export function getScore(user) {
+    return getQuestions(user) + getAnswers(user)
+}
+
+export function getAnswers(user) {
+    return Object.keys(user.answers).length
+}
+
+export function getQuestions(user) {
+    return user.questions.length
+}

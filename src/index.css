@@ -194,6 +194,12 @@ li {
   vertical-align: middle;
 }
 
+.nav-user > p {
+  margin-left: 15px;
+  margin-top: 7px;
+  display: inline-block;
+}
+
 .nav-avatar {
   height: 35px;
   border-radius: 50%;
@@ -306,3 +312,83 @@ li {
   text-align: center; 
   line-height: 30px;  
 }
+
+.user-list > li {
+  list-style-type: none;
+  margin-left: 500px;
+}
+
+.user {
+  width: 530px;
+  height: 180px;
+  border: 1px solid #909090;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-avatar {
+  height: 100px;
+  border-radius: 50px;
+  margin-top: 40px;
+  margin-left: 10px;
+}
+.user-info > h3 {
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+.user-qa-info {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  width: 200px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.first-child {
+  width: 180px;
+}
+
+.score {
+  border: 1px solid #909090;
+  height: 140px;
+  width: 120px;
+  margin-left: 30px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column
+}
+
+.score-heading {
+  background: #D3D3D3;
+  height: 40px;
+  width: 100%;
+}  
+
+.score-heading > strong {
+  margin-top: 10px;
+  margin-left: 36px;
+  display: inline-block;
+}
+
+.score-info {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin: 10px;
+  margin-top: 28px;
+  margin-left: 40px;
+  border: 1px solid black;
+  background: #99FFFF;
+}
+
+.score-info > strong {
+  width: 100%;
+  height: 100%;
+  margin-left: 14px;
+  margin-top: 10px;
+  text-align: middle;
+  display: inline-block;
+}
+
+
