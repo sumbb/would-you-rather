@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { getQuestionInfo } from '../utils/common'
 
 class Question extends Component {
 
@@ -10,13 +11,11 @@ class Question extends Component {
 
     render() {
         const { question } = this.props
-        console.log('props', this.props)
         if( question === null) {
             return <p>This question does not exist</p>
         }
         
-        const { qid, author_name, author_avatar, text } = question
-        console.log('question', this.props.question)
+        const { author_name, author_avatar, text } = question
         return (
             <div className='question'>
                 <div className='question-heading'>
@@ -52,14 +51,5 @@ function mapStateToProps({ questions, users }, {qid, isAnswered}) {
     }
 }
 
-// todo : tranefr to util function
 
-function getQuestionInfo(question, author) {
-    return {
-        qid : question.id,
-        author_name : author.name,
-        author_avatar : author.avatarURL,
-        text : question.optionOne.text.substring(0, question.optionOne.text.length/2)
-    }
-}
 export default connect(mapStateToProps)(Question)

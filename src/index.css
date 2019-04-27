@@ -158,3 +158,44 @@ li {
   margin-left: auto;
   margin-right: auto;
 }
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+  padding-left: 100px;
+  height: 50px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.nav li:first-child {
+  padding-left: 0;
+}
+.nav button {
+  background: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+  display: inline;
+}
+
+.nav-user {
+  height: 100%;
+  margin-left : 500px;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.nav-avatar {
+  height: 35px;
+  border-radius: 50%;
+}

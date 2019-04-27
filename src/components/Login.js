@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { setLoggedUser } from '../actions/loggedUser';
-
+import { withRouter } from 'react-router-dom'
 
 class Login extends Component {
     state = {
@@ -21,7 +21,7 @@ class Login extends Component {
     handleSubmit(event) {
         event.preventDefault() 
         this.props.dispatch(setLoggedUser(this.state.selectedUser))
-        // todo : Redirect to the home page
+        this.props.history.push(`/home`)
     }
 
     render() {
@@ -61,4 +61,4 @@ function mapStateToProps( { users }) {
     }
 }
 
-export default connect(mapStateToProps)(Login)
+export default withRouter(connect(mapStateToProps)(Login))

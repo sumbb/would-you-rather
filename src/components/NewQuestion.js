@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestion } from '../actions/questions';
+import { isUserLoggedIn } from '../utils/common'
+import { Redirect, withRouter } from 'react-router-dom'
 
 class NewQuestion extends Component {
     state = {
@@ -11,12 +13,13 @@ class NewQuestion extends Component {
     handleSubmit(event) {
             event.preventDefault()
             const { optionOne, optionTwo } = this.state
-            const { dispatch, loggedUser } = this.props
+            const { dispatch, loggedUser, history } = this.props
             dispatch(handleAddQuestion(optionOne, optionTwo, loggedUser))
             this.setState(() => ({
                 optionOne: '',
                 optionTwo: ''
             }))
+            history.push('/home')
     }
 
     handleOptionOneChange(event) {
@@ -34,6 +37,9 @@ class NewQuestion extends Component {
     }
 
     render() {
+        if(!isUserLoggedIn(this.props.loggedUser)) {
+            return <Redirect to='/'/>
+        }
         const { optionOne, optionTwo } = this.state
         return (
             <div className='new-question'>
@@ -74,4 +80,4 @@ function mapStateToProps({ loggedUser}) {
     }
 }
 
-export default connect(mapStateToProps)(NewQuestion)
+export default withRouter(connect(mapStateToProps)(NewQuestion))

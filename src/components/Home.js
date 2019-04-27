@@ -2,11 +2,17 @@ import React, { Component } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import QuestionList from './QuestionList';
-
+import { connect } from 'react-redux'
+import { withRouter, Redirect } from 'react-router-dom'
+import { isUserLoggedIn } from '../utils/common';
 
 class Home extends Component {
+    
     render() {
-      return  ( 
+      if(!this.props.isUserLoggedIn)  {
+          return <Redirect to="/"/>
+      }
+      return  (
         <div className='center'>
             <Tabs className='home'>
                 <TabList >
@@ -15,14 +21,20 @@ class Home extends Component {
                 </TabList>
 
                 <TabPanel>
-                    <QuestionList isAnswered={true}/>
+                    <QuestionList isAnswered={true}/> 
                 </TabPanel>
                 <TabPanel>
-                    <QuestionList isAnswered={false}/>
+                     <QuestionList isAnswered={false}/>
                 </TabPanel>
             </Tabs>
         </div>)
     }
 }
 
-export default Home;
+function mapStateToProps({ loggedUser }) {
+    return {
+        isUserLoggedIn : isUserLoggedIn(loggedUser)
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Home))

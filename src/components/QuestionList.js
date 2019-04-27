@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question';
+import { isUserLoggedIn } from '../utils/common'
+import { sortQuestionsByTimestamp } from '../utils/common'
 
 class QuestionList extends Component {
 
@@ -19,7 +21,7 @@ class QuestionList extends Component {
 
 function mapStateToProps({ users, loggedUser, questions }, { isAnswered } ) {
     let questionIds = null
-    const answeredQuestionIds = Object.keys(users[loggedUser].answers)
+    const answeredQuestionIds = isUserLoggedIn(loggedUser) ? Object.keys(users[loggedUser].answers) : null
     
     if( isAnswered ) {
         questionIds = answeredQuestionIds
@@ -28,7 +30,7 @@ function mapStateToProps({ users, loggedUser, questions }, { isAnswered } ) {
     }
 
     return {
-        questionIds
+        questionIds : sortQuestionsByTimestamp(questionIds, questions)
     }
 }
 
