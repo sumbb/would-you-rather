@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getQuestionInfo } from '../utils/common'
+import { withRouter } from 'react-router-dom'
 
 class Question extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        //todo : redirect to correct page according to answered or unanswered
+        this.props.history.push(`/question/${this.props.question.qid}`)
     }
 
     render() {
@@ -52,4 +53,4 @@ function mapStateToProps({ questions, users }, {qid, isAnswered}) {
 }
 
 
-export default connect(mapStateToProps)(Question)
+export default withRouter(connect(mapStateToProps)(Question))

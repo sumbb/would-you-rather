@@ -14,3 +14,7 @@ export function isUserLoggedIn( userId ) {
 export function sortQuestionsByTimestamp(questionIds, questions) {
     return questionIds.sort((a,b) => questions[b].timestamp - questions[a].timestamp)
 }
+
+export function isAnsweredByUser(user, qid) {
+    return Object.keys(user.answers).includes(qid)
+}
