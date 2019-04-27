@@ -18,3 +18,8 @@ export function sortQuestionsByTimestamp(questionIds, questions) {
 export function isAnsweredByUser(user, qid) {
     return Object.keys(user.answers).includes(qid)
 }
+
+export function calculatePercentage(votes, total) {
+    const percentage =  (100*votes)/total
+    return Math.round( percentage * 10) / 10
+}

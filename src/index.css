@@ -243,7 +243,7 @@ li {
 .poll-result {
   width: 100%;
   max-width: 520px;
-  height: 400px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -273,4 +273,36 @@ li {
 
 .poll-result-redirect {
   width: 420px;
+  height: 100%;
+}
+
+.option {
+  width: 350px;
+  height: 160px;
+  border: 2px solid #909090;
+  margin-left: 15px;
+  margin-bottom: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.option > strong {
+  height: 20px;
+  margin-top: 10px;
+}
+.option-selected {
+  border: 2px solid #99CCFF;
+  background: #CCFFFF
+}
+
+.progress {
+  width: 95%;
+  background: #D3D3D3;
+  margin-left : 9px;
+}
+
+.bar {
+  background: #00CCFF;
+  text-align: center; 
+  line-height: 30px;  
 }
