@@ -40,7 +40,7 @@ class Navigation extends Component {
                                     alt={`Avatar of ${name}`}
                                     className='nav-avatar'    
                                 />
-                                <p>{name}</p>
+                                <p>{`Hello, ${name}`}</p>
                             </div>
                         </li>
                         <li><button
