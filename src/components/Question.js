@@ -31,7 +31,7 @@ class Question extends Component {
                     <div className="question-redirect">
                         <h4>Would you rather</h4>
                         <p>...{text}...</p>
-                        <button className='btn' onClick={(event) => this.handleSubmit(event)}>View Poll</button>
+                        <button onClick={(event) => this.handleSubmit(event)}>View Poll</button>
                     </div>
                 </div>
             </div>

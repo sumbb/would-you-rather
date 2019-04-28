@@ -63,7 +63,6 @@ class NewQuestion extends Component {
                     className='textarea'
                 ></textarea>    
                 <button
-                    className='btn'
                     type='submit'
                     disabled={optionOne === '' || optionTwo === ''}>
                 Submit

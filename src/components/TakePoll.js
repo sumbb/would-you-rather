@@ -62,8 +62,9 @@ class TakePoll extends Component {
                                     />{` ${optionTwoText}`}
                                 </div>
                                 <button 
-                                    className='btn'
-                                    disabled={option === null}>Submit</button>
+                                    disabled={option === null}>
+                                    Submit
+                                </button>
                         </form>
                         
                     </div>
