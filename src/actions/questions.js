@@ -1,4 +1,5 @@
 import { _saveQuestion, _saveQuestionAnswer } from '../utils/_DATA'
+import { showLoading, hideLoading } from 'react-redux-loading';
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
@@ -44,8 +45,10 @@ export function handleAddQuestion(optionOneText, optionTwoText, author) {
         author
     }
     return (dispatch) => {
+        dispatch(showLoading())
         return _saveQuestion(question).then((question) => {
              dispatch(addQuestion(question))
+             dispatch(hideLoading())
         })  
     }
 }

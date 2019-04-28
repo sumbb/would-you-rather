@@ -20,7 +20,7 @@ class NewQuestion extends Component {
                 optionOne: '',
                 optionTwo: ''
             }))
-            history.push('/home')
+            history.push('/')
     }
 
     handleOptionOneChange(event) {
