@@ -28,22 +28,30 @@ class Login extends Component {
         const { selectedUser } = this.state
         const { users } = this.props
         return (
-            <div align="center">
-               <h3>Select A User to Login</h3>
-               <form  onSubmit={(event) => this.handleSubmit(event)}>
-               <select onChange={(event) => this.handleChange(event)}>
-                    <option value=''>Choose User</option> 
-                    {users.map((user)=> (
-                        <option value={user.id} key={user.id}>{user.name}</option>
-                    ))}
-                </select>
-                 <br></br><br></br>
-                <button
-                    type='submit'
-                    disabled={ selectedUser === null}>
-                Submit
-                </button>
-               </form>
+            <div className='center'>
+                <div className='display'> 
+                    <div className='login'>
+                        <div className='login-heading'>
+                            <h3>welcome to Would You Rather App!</h3>
+                            <p>Please sign in to continue</p>
+                        </div>
+                        <h3>Sign in</h3>
+                        <form  className='login-form' onSubmit={(event) => this.handleSubmit(event)}>
+                            <select onChange={(event) => this.handleChange(event)}>
+                                <option value=''>Choose User</option> 
+                                {users.map((user)=> (
+                                <option value={user.id} key={user.id}>{user.name}</option>
+                                    ))}
+                            </select>
+                            <br></br><br></br>
+                            <button
+                                type='submit'
+                                disabled={ selectedUser === null}>
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         )
     }
