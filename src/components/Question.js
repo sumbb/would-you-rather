@@ -7,7 +7,7 @@ class Question extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        this.props.history.push(`/question/${this.props.question.qid}`)
+        this.props.history.push(`/questions/${this.props.question.qid}`)
     }
 
     render() {
