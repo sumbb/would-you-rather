@@ -15,16 +15,15 @@ class Home extends Component {
       return  (
         <div className='center'>
             <Tabs className='home'>
-                <TabList >
-                    <Tab>Answered</Tab>
-                    <Tab>Unanswered</Tab>
+                <TabList>
+                    <Tab>Unanswered Questions</Tab>
+                    <Tab>Answered Questions</Tab>
                 </TabList>
-
                 <TabPanel>
-                    <QuestionList isAnswered={true}/> 
+                    <QuestionList isAnswered={false}/>
                 </TabPanel>
                 <TabPanel>
-                     <QuestionList isAnswered={false}/>
+                     <QuestionList isAnswered={true}/>
                 </TabPanel>
             </Tabs>
         </div>)
