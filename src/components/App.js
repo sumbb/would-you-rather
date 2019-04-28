@@ -28,8 +28,7 @@ class App extends Component {
                 ? null
                 : <div>
                    <Switch>
-                      <Route path='/' exact component={Login}/>
-                      <Route path='/home' component={Home}/>
+                      <Route path='/' exact component={Home}/>
                       <Route path='/add' component={NewQuestion}/>
                       <Route path='/questions/:qid' component={ViewPoll}/>
                       <Route path='/leaderboard' component={Leaderboard}/>

@@ -3,14 +3,15 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import QuestionList from './QuestionList';
 import { connect } from 'react-redux'
-import { withRouter, Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { isUserLoggedIn } from '../utils/common';
+import Login from './Login'
 
 class Home extends Component {
     
     render() {
       if(!this.props.isUserLoggedIn)  {
-          return <Redirect to="/"/>
+          return <Login />
       }
       return  (
         <div className='center'>

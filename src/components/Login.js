@@ -20,8 +20,8 @@ class Login extends Component {
 
     handleSubmit(event) {
         event.preventDefault() 
-        this.props.dispatch(setLoggedUser(this.state.selectedUser))
-        this.props.history.push(`/home`)
+        const { dispatch } = this.props
+        dispatch(setLoggedUser(this.state.selectedUser))
     }
 
     render() {

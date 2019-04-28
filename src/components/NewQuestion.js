@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { handleAddQuestion } from '../actions/questions';
 import { isUserLoggedIn } from '../utils/common'
 import { Redirect, withRouter } from 'react-router-dom'
+import Login from './Login';
 
 class NewQuestion extends Component {
     state = {
@@ -38,7 +39,7 @@ class NewQuestion extends Component {
 
     render() {
         if(!isUserLoggedIn(this.props.loggedUser)) {
-            return <Redirect to='/'/>
+            return <Login />
         }
         const { optionOne, optionTwo } = this.state
         return (

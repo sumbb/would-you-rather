@@ -16,7 +16,7 @@ class Navigation extends Component {
         <nav className='nav center'>
             <ul>
                 <li>
-                    <NavLink to='/home'  activeClassName='active'>
+                    <NavLink to='/'  activeClassName='active'>
                     Home
                     </NavLink>
                 </li>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { sortUsersByScore, isUserLoggedIn } from '../utils/common'
 import User from './User'
-import { Redirect } from 'react-router-dom'
+import Login from './Login'
 
 class Leaderboard extends Component {
     render() {
@@ -10,7 +10,7 @@ class Leaderboard extends Component {
         const { userIds, isUserLoggedIn } = this.props
 
         if(!isUserLoggedIn) {
-            return <Redirect to='/'/>
+            return <Login />
         }
 
         return (
