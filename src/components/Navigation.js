@@ -7,15 +7,15 @@ import { setLoggedUser } from '../actions/loggedUser';
 const paths = [
     {
         path : '/',
-        name : 'Home'
+        pathName : 'Home'
     },
     {
         path : '/add',
-        name : 'New Question'
+        pathName : 'New Question'
     },
     {
         path : '/leaderboard',
-        name : 'Leader Board'
+        pathName : 'Leader Board'
     }
 ]
 
@@ -26,34 +26,34 @@ class Navigation extends Component {
       this.props.history.push('/')
   }  
   render() {
-      const { avatar, name, location } = this.props
+      const { userAvatar, userName, location } = this.props
       return (
         <nav className='nav center'>
             <ul>
                 {
-                    paths.map(({ path, name}) => (
+                    paths.map(({ path, pathName}) => (
                         <li key={path}>
                             <NavLink
                                 to={path}
                                 activeClassName='active'
-                                className={location.pathname === path ? `selected-tab` : ``}
-                                >
-                                {name}
+                                className={(location.pathname === path && userName !== null) ? `selected-tab` : ``}
+                            >
+                            {pathName}
                             </NavLink>
                         </li>
                     ))
                 }
                 
-                {name !== null ? (
+                {userName !== null ? (
                     <Fragment>
                         <li>
                             <div className='nav-user'>
                                 <img 
-                                    src={avatar}
-                                    alt={`Avatar of ${name}`}
+                                    src={userAvatar}
+                                    alt={`Avatar of ${userName}`}
                                     className='nav-avatar'    
                                 />
-                                <p>{`Hello, ${name}`}</p>
+                                <p>{`Hello, ${userName}`}</p>
                             </div>
                         </li>
                         <li><button
@@ -69,13 +69,13 @@ class Navigation extends Component {
 
 function mapStateToProps({ users, loggedUser}) {
     const user = isUserLoggedIn(loggedUser) ? users[loggedUser] : null 
-    const name = user !== null ? user.name : null
-    const avatar = user !== null ? user.avatarURL : null
+    const userName = user !== null ? user.name : null
+    const userAvatar = user !== null ? user.avatarURL : null
     
     return {
         uid : loggedUser,
-        name,
-        avatar
+        userName,
+        userAvatar
     }
 }
 export default withRouter(connect(mapStateToProps)(Navigation))
