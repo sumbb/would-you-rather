@@ -40,3 +40,7 @@ export function getAnswers(user) {
 export function getQuestions(user) {
     return user.questions.length
 }
+
+export function isValidQuestion(qid, questions) {
+    return Object.keys(questions).includes(qid)
+}
