@@ -174,7 +174,7 @@ li {
 
 .nav-user {
   height: 100%;
-  margin-left : 500px;
+  margin-left : 400px;
   display: flex;
   flex-direction: row;
   vertical-align: middle;
@@ -423,4 +423,8 @@ li {
   height: 35px;
   cursor: pointer;
   font-size: 15px;
+}
+
+.selected-tab {
+  color: red;
 }
