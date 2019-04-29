@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { calculatePercentage } from '../utils/common'
+import { calculatePercentage, getTotalVotes } from '../utils/common'
 
 class Option extends Component {
     render() {
@@ -31,7 +31,7 @@ function mapStateToProps({ users, questions, loggedUser}, { qid, option }) {
    const  question = questions[qid]
    const isOptionSelected = question[option].votes.includes(loggedUser)
    const optionText = question[option].text 
-   const total =  Object.keys(users).length
+   const total =  getTotalVotes(question)
    const votes =  question[option].votes.length
    const percentage = calculatePercentage(votes, total)
 

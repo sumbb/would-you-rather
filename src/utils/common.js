@@ -44,3 +44,7 @@ export function getQuestions(user) {
 export function isValidQuestion(qid, questions) {
     return Object.keys(questions).includes(qid)
 }
+
+export function getTotalVotes(question) {
+    return question["optionOne"].votes.length + question["optionTwo"].votes.length
+}
