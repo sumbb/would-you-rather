@@ -23,17 +23,11 @@ class NewQuestion extends Component {
             history.push('/')
     }
 
-    handleOptionOneChange(event) {
+    handleOptionChange(event) {
         const text = event.target.value
+        const name = event.target.name
         this.setState(() => ({
-            optionOne: text
-        }))
-    }    
-
-    handleOptionTwoChange(event) {
-        const text = event.target.value
-        this.setState(() => ({
-            optionTwo: text
+            [name]: text
         }))
     }
 
@@ -53,14 +47,16 @@ class NewQuestion extends Component {
                 <textarea
                     placeholder="Option one"
                     value={optionOne}
-                    onChange={(event) => this.handleOptionOneChange(event)}
+                    name="optionOne"
+                    onChange={(event) => this.handleOptionChange(event)}
                     className='textarea'
                 ></textarea>
                 <p>--OR--</p>
                 <textarea
                     placeholder="Option two"
                     value={optionTwo}
-                    onChange={(event) => this.handleOptionTwoChange(event)}
+                    name="optionTwo"
+                    onChange={(event) => this.handleOptionChange(event)}
                     className='textarea'
                 ></textarea>    
                 <button
