@@ -33,8 +33,8 @@ export function users(state = {}, action) {
         case REMOVE_ANSWER: 
               const { qidR, loggedUserR } = action
               const answers = state[loggedUserR].answers
-              delete answers[qidR]
-              const newAnswers = Object.create(answers)   
+              const newAnswers = Object.create(answers)
+              delete newAnswers[qidR]
               return {
                   ...state,
                   [loggedUserR]: {
